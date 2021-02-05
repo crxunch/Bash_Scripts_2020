@@ -1,0 +1,22 @@
+#2/5/21
+
+#command to copy one file to all directories within the root of a file tree recursively
+find [directory] -type d -print0 | xargs -0 -n1 cp -v <filename>
+#im going to begin working on a script to make this autonomous
+#here is the script
+
+#!/bin/bash
+
+echo "Please enter the absolute path of the root of the file tree of directories you would like to send this file to."
+
+read directory
+
+echo "Please enter the absolute path of the file you would like to be copied."
+
+read filename
+
+find $directory -type d -print0 | xargs -0 -n1 cp -v $filename
+
+done
+
+#its super simple but im extremely proud, big thanks to all the people that helped me put this together
